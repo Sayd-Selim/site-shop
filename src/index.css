@@ -1,0 +1,246 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --wb-primary: #CB11AB;
+  --wb-primary-hover: #9B0D82;
+  --wb-secondary: #FFC0CB;
+  --wb-accent: #FF69B4;
+  --wb-background: #F8F8F8;
+  --wb-text: #333333;
+}
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--wb-background);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl sm:text-5xl md:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl sm:text-4xl md:text-5xl;
+  }
+
+  h3 {
+    @apply text-2xl sm:text-3xl md:text-4xl;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg transition-all duration-200;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700 
+           dark:bg-primary-500 dark:hover:bg-primary-600;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary-600 text-white hover:bg-secondary-700 
+           dark:bg-secondary-500 dark:hover:bg-secondary-600;
+  }
+  
+  .input {
+    @apply mt-1 block w-full rounded-lg border-gray-300 
+           focus:border-primary-500 focus:ring-primary-500 
+           dark:bg-gray-800 dark:border-gray-700 dark:text-white;
+  }
+
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-xl p-6;
+  }
+
+  .nav-link {
+    @apply px-4 py-2 rounded-lg transition-all duration-200
+           hover:bg-gray-100 dark:hover:bg-gray-800
+           focus:outline-none focus:ring-2 focus:ring-primary-500;
+  }
+
+  .nav-link-active {
+    @apply bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
+           transition-colors duration-200;
+  }
+
+  .badge-primary {
+    @apply bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200;
+  }
+
+  .badge-secondary {
+    @apply bg-secondary-100 text-secondary-800 dark:bg-secondary-900 dark:text-secondary-200;
+  }
+
+  .page-transition {
+    @apply animate-fade-in;
+  }
+
+  .glass-effect {
+    @apply bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm;
+  }
+
+  /* Wildberries-like button styles */
+  .btn-wb {
+    @apply px-6 py-2 bg-[#CB11AB] text-white rounded-md hover:bg-[#9B0D82] transition-colors;
+  }
+
+  /* Wildberries-like card styles */
+  .card-wb {
+    @apply bg-white rounded-lg shadow-md overflow-hidden;
+  }
+
+  /* Wildberries-like input styles */
+  .input-wb {
+    @apply px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#CB11AB] focus:border-transparent;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .text-shadow-dark {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #CB11AB;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #9B0D82;
+  }
+
+  /* Animations */
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-bounce {
+    animation: bounce 1s infinite;
+  }
+
+  /* Loading spinner */
+  .loading-spinner {
+    @apply w-8 h-8 border-4 border-[#CB11AB] border-t-transparent rounded-full animate-spin;
+  }
+
+  /* Status badges */
+  .status-badge {
+    @apply inline-block px-3 py-1 rounded-full text-sm;
+  }
+
+  .status-badge-delivered {
+    @apply bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200;
+  }
+
+  .status-badge-in-transit {
+    @apply bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200;
+  }
+
+  .status-badge-pending {
+    @apply bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200;
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Handwritten Font Styles */
+.font-handwritten-primary {
+  font-family: 'Great Vibes', cursive;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  letter-spacing: 1px;
+}
+
+.font-handwritten-secondary {
+  font-family: 'Dancing Script', cursive;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.font-handwritten-accent {
+  font-family: 'Caveat', cursive;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.font-handwritten-button {
+  font-family: 'Kaushan Script', cursive;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.font-handwritten-badge {
+  font-family: 'Satisfy', cursive;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.font-handwritten-feature {
+  font-family: 'Marck Script', cursive;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.font-handwritten-stats {
+  font-family: 'Pacifico', cursive;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.font-handwritten-info {
+  font-family: 'Yellowtail', cursive;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Enhanced text effects for handwritten fonts */
+.text-glow {
+  text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+.text-glow-gold {
+  text-shadow: 0 0 10px rgba(255,215,0,0.6);
+}
+
+.text-glow-pink {
+  text-shadow: 0 0 10px rgba(255,192,203,0.6);
+}
